@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".test.ImageRenderingActivity">
+
+    <include layout="@layout/common_title" />
+
+    <ImageView
+        android:id="@+id/iv_forest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/tv_bhd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="饱和度(0.0 - 2.0)："
+        android:textSize="14sp" />
+
+    <SeekBar
+        android:id="@+id/sb_bhd"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp" />
+
+    <TextView
+        android:id="@+id/tv_ld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="亮度(-1.0 to 1.0)："
+        android:textSize="14sp" />
+
+    <SeekBar
+        android:id="@+id/sb_ld"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp" />
+
+    <TextView
+        android:id="@+id/tv_dbd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="对比度(0.0 to 4.0)："
+        android:textSize="14sp" />
+
+    <SeekBar
+        android:id="@+id/sb_dbd"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp" />
+</LinearLayout>
