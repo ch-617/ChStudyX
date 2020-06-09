@@ -8,94 +8,105 @@
 
     <include layout="@layout/common_title" />
 
-    <ImageView
-        android:id="@+id/iv_forest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:padding="10dp" />
-
-    <TextView
-        android:id="@+id/tv_bhd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:text="饱和度(0.0 - 2.0)："
-        android:textSize="14sp" />
-
-    <SeekBar
-        android:id="@+id/sb_bhd"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_margin="10dp"
-        android:paddingStart="40dp"
-        android:paddingEnd="40dp"
-        android:progress="50" />
+        android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/tv_ld"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:text="亮度(-1.0 to 1.0)："
-        android:textSize="14sp" />
-
-    <SeekBar
-        android:id="@+id/sb_ld"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_margin="10dp"
-        android:paddingStart="40dp"
-        android:paddingEnd="40dp"
-        android:progress="50" />
-
-    <TextView
-        android:id="@+id/tv_dbd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:text="对比度(0.0 to 4.0)："
-        android:textSize="14sp" />
-
-    <SeekBar
-        android:id="@+id/sb_dbd"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_margin="10dp"
-        android:paddingStart="40dp"
-        android:paddingEnd="40dp"
-        android:progress="25" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:onClick="btn_gray"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="灰色滤镜" />
+            android:orientation="vertical" >
 
-        <Button
-            android:onClick="btn_fish_eye"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="鱼眼效果" />
+            <ImageView
+                android:id="@+id/iv_forest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:padding="10dp" />
 
-        <Button
-            android:onClick="btn_gray_and_fish_eye"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="灰色+鱼眼" />
+            <TextView
+                android:id="@+id/tv_bhd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="饱和度(0.0 - 2.0)："
+                android:textSize="14sp" />
 
-        <Button
-            android:onClick="btn_reset"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="恢复默认" />
-    </LinearLayout>
+            <SeekBar
+                android:id="@+id/sb_bhd"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:paddingStart="40dp"
+                android:paddingEnd="40dp"
+                android:progress="50" />
+
+            <TextView
+                android:id="@+id/tv_ld"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="亮度(-1.0 to 1.0)："
+                android:textSize="14sp" />
+
+            <SeekBar
+                android:id="@+id/sb_ld"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:paddingStart="40dp"
+                android:paddingEnd="40dp"
+                android:progress="50" />
+
+            <TextView
+                android:id="@+id/tv_dbd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="对比度(0.0 to 4.0)："
+                android:textSize="14sp" />
+
+            <SeekBar
+                android:id="@+id/sb_dbd"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:paddingStart="40dp"
+                android:paddingEnd="40dp"
+                android:progress="25" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:onClick="btn_gray"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="灰色滤镜" />
+
+                <Button
+                    android:onClick="btn_fish_eye"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="鱼眼效果" />
+
+                <Button
+                    android:onClick="btn_gray_and_fish_eye"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="灰色+鱼眼" />
+
+                <Button
+                    android:onClick="btn_reset"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="恢复默认" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

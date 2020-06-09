@@ -14,6 +14,7 @@ import jp.co.cyberagent.android.gpuimage.GPUImage;
 import jp.co.cyberagent.android.gpuimage.GPUImageBrightnessFilter;
 import jp.co.cyberagent.android.gpuimage.GPUImageBulgeDistortionFilter;
 import jp.co.cyberagent.android.gpuimage.GPUImageContrastFilter;
+import jp.co.cyberagent.android.gpuimage.GPUImageFilterGroup;
 import jp.co.cyberagent.android.gpuimage.GPUImageGrayscaleFilter;
 import jp.co.cyberagent.android.gpuimage.GPUImageSaturationFilter;
 
@@ -120,21 +121,32 @@ public class ImageRenderingActivity extends BaseActivity {
             contrast = progress * 0.04f;
 //            gpuImage.setFilter(new GPUImageContrastFilter(contrast));
         }
+
         // 使用GPUImage处理图像
-        Bitmap bitmap = mBitmap;
-        gpuImage.setImage(bitmap);
-        gpuImage.setFilter(new GPUImageSaturationFilter(saturation));
-        bitmap = gpuImage.getBitmapWithFilterApplied();
+//        Bitmap bitmap = mBitmap;
+//        gpuImage.setImage(bitmap);
+//        gpuImage.setFilter(new GPUImageSaturationFilter(saturation));
+//        bitmap = gpuImage.getBitmapWithFilterApplied();
+//
+//        gpuImage.setImage(bitmap);
+//        gpuImage.setFilter(new GPUImageBrightnessFilter(brighness));
+//        bitmap = gpuImage.getBitmapWithFilterApplied();
+//
+//        gpuImage.setImage(bitmap);
+//        gpuImage.setFilter(new GPUImageContrastFilter(contrast));
+//        bitmap = gpuImage.getBitmapWithFilterApplied();
 
-        gpuImage.setImage(bitmap);
-        gpuImage.setFilter(new GPUImageBrightnessFilter(brighness));
-        bitmap = gpuImage.getBitmapWithFilterApplied();
+        // 使用组合滤镜处理
+        gpuImage.setImage(mBitmap);
+        GPUImageFilterGroup gpuImageFilterGroup = new GPUImageFilterGroup();
+        gpuImageFilterGroup.addFilter(new GPUImageSaturationFilter(saturation));
+        gpuImageFilterGroup.addFilter(new GPUImageBrightnessFilter(brighness));
+        gpuImageFilterGroup.addFilter(new GPUImageContrastFilter(contrast));
 
-        gpuImage.setImage(bitmap);
-        gpuImage.setFilter(new GPUImageContrastFilter(contrast));
-        bitmap = gpuImage.getBitmapWithFilterApplied();
+        gpuImage.setFilter(gpuImageFilterGroup);
+        mBitmap = gpuImage.getBitmapWithFilterApplied();
 
-        return bitmap;
+        return mBitmap;
 
     }
 
