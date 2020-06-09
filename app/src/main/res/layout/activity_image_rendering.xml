@@ -29,7 +29,8 @@
         android:layout_height="40dp"
         android:layout_margin="10dp"
         android:paddingStart="40dp"
-        android:paddingEnd="40dp" />
+        android:paddingEnd="40dp"
+        android:progress="50" />
 
     <TextView
         android:id="@+id/tv_ld"
@@ -45,7 +46,8 @@
         android:layout_height="40dp"
         android:layout_margin="10dp"
         android:paddingStart="40dp"
-        android:paddingEnd="40dp" />
+        android:paddingEnd="40dp"
+        android:progress="50" />
 
     <TextView
         android:id="@+id/tv_dbd"
@@ -61,5 +63,39 @@
         android:layout_height="40dp"
         android:layout_margin="10dp"
         android:paddingStart="40dp"
-        android:paddingEnd="40dp" />
+        android:paddingEnd="40dp"
+        android:progress="25" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:onClick="btn_gray"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="灰色滤镜" />
+
+        <Button
+            android:onClick="btn_fish_eye"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="鱼眼效果" />
+
+        <Button
+            android:onClick="btn_gray_and_fish_eye"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="灰色+鱼眼" />
+
+        <Button
+            android:onClick="btn_reset"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="恢复默认" />
+    </LinearLayout>
 </LinearLayout>
