@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.xi.gua.chstudyx.BaseActivity;
 import com.xi.gua.chstudyx.R;
 
 import jp.co.cyberagent.android.gpuimage.GPUImage;

@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <include layout="@layout/common_title" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,5 +16,15 @@
         android:background="@color/blue"
         android:onClick="image_rendering"
         android:text="图片渲染"
+        android:textColor="@color/white" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/blue"
+        android:onClick="classify_show"
+        android:text="RecyclerView 展示同日期下的数据信息"
+        android:textAllCaps="false"
         android:textColor="@color/white" />
 </LinearLayout>

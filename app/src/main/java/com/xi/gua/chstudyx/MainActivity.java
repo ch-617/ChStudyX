@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.xi.gua.chstudyx.test.BaseActivity;
 import com.xi.gua.chstudyx.test.ImageRenderingActivity;
 
 public class MainActivity extends BaseActivity {
@@ -18,5 +17,9 @@ public class MainActivity extends BaseActivity {
 
     public void image_rendering(View view) {
         startActivity(new Intent(this, ImageRenderingActivity.class));
+    }
+
+    public void classify_show(View view) {
+
     }
 }
