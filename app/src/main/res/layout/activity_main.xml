@@ -24,6 +24,7 @@
         android:layout_marginTop="10dp"
         android:background="@color/blue"
         android:onClick="classify_show"
+        android:padding="5dp"
         android:text="RecyclerView 展示同日期下的数据信息"
         android:textAllCaps="false"
         android:textColor="@color/white" />

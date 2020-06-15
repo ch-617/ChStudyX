@@ -1,4 +1,4 @@
-package com.xi.gua.chstudyx.test;
+package com.xi.gua.chstudyx;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

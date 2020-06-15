@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.xi.gua.chstudyx.test.ImageRenderingActivity;
+import com.xi.gua.chstudyx.grouprecyclerview.ClassifyShowActivity;
 
 public class MainActivity extends BaseActivity {
 
@@ -20,6 +20,6 @@ public class MainActivity extends BaseActivity {
     }
 
     public void classify_show(View view) {
-
+        startActivity(new Intent(this, ClassifyShowActivity.class));
     }
 }
