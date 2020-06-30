@@ -28,4 +28,15 @@
         android:text="RecyclerView 展示同日期下的数据信息"
         android:textAllCaps="false"
         android:textColor="@color/white" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/blue"
+        android:onClick="test"
+        android:padding="5dp"
+        android:text="测试模块"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
 </LinearLayout>

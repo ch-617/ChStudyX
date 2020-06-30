@@ -22,4 +22,8 @@ public class MainActivity extends BaseActivity {
     public void classify_show(View view) {
         startActivity(new Intent(this, ClassifyShowActivity.class));
     }
+
+    public void test(View view) {
+        startActivity(new Intent(this, TestActivity.class));
+    }
 }

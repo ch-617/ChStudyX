@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".grouprecyclerview.ClassifyShowActivity"></activity>
+        <activity android:name=".TestActivity"></activity>
+        <activity android:name=".grouprecyclerview.ClassifyShowActivity" />
         <activity android:name=".ImageRenderingActivity" />
         <activity android:name=".BaseActivity" />
         <activity android:name=".MainActivity">
