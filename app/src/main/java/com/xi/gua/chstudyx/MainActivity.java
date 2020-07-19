@@ -11,9 +11,9 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//        setTitleName(getString(R.string.app_name));
-        startActivity(new Intent(this, CustomControlActivity.class));
+        setContentView(R.layout.activity_main);
+        setTitleName(getString(R.string.app_name));
+//        startActivity(new Intent(this, CustomControlActivity.class));
     }
 
     public void image_rendering(View view) {
@@ -30,5 +30,9 @@ public class MainActivity extends BaseActivity {
 
     public void custom_control(View view) {
         startActivity(new Intent(this, CustomControlActivity.class));
+    }
+
+    public void blueTooth(View view) {
+        startActivity(new Intent(this, BlueToothActivity.class));
     }
 }
