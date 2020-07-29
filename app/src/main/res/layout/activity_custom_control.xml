@@ -4,14 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".CustomControlActivity">
 
     <com.xi.gua.chstudyx.myview.RockerVerticalButton
         android:id="@+id/rvb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:myTrackV="@drawable/bg_track"
-        app:myThumbV="@drawable/bg_thumb"/>
+        app:myThumbV="@drawable/bg_thumb"
+        app:myTrackV="@drawable/bg_track" />
+
+    <com.xi.gua.chstudyx.myview.TrimHorizontalButton
+        android:id="@+id/thv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:thumbTrimH="@drawable/bg_thumb_v"
+        app:trackTrimH="@drawable/bg_track_h" />
 </LinearLayout>

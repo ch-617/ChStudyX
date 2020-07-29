@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -14,24 +15,25 @@ import androidx.annotation.Nullable;
 
 public class RockerVerticalButton extends View {
 
-    static final int MAXVALUE = 255;
-    static final int CENTREVALUE = 127;
+    static final int MAXVALUE = 255;// 最大值
+    static final int CENTREVALUE = 127;// 中间值
+
+    private int mRockerWidth;//摇杆宽
+    private int mRockerHeigh;//摇杆高
+
+    private Drawable mTrackDrawable;//背景部分
+    private int mTrackTop;
+    private int mTrackBottom;
+    private int mTrackLeft;
+    private int mTrackRight;
 
     private Drawable mThumbDrawable;//中心按钮
-    private Drawable mTrackDrawable;//背景部分
-
-    private int mThumbHeight;//中心按钮宽
+    private int mThumbHeight;//中心按钮高
     private int mThumbLeft;
     private int mThumbRight;
     private int mThumbTop;
     private int mThumbBottom;
 
-    private int mRockerWidth;
-    private int mRockerHeigh;
-    private int mTrackTop;
-    private int mTrackBottom;
-    private int mTrackLeft;
-    private int mTrackRight;
     private int mOffsetY = 0;//Y方向偏移量
 
     public RockerVerticalButton(Context context) {
@@ -48,10 +50,6 @@ public class RockerVerticalButton extends View {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.RockerVerticalButton);
         mThumbDrawable = typedArray.getDrawable(R.styleable.RockerVerticalButton_myThumbV);
         mTrackDrawable = typedArray.getDrawable(R.styleable.RockerVerticalButton_myTrackV);
-
-        if (mTrackDrawable != null) {
-            mTrackDrawable.setCallback(this);
-        }
 
         invalidate();
 
@@ -120,6 +118,7 @@ public class RockerVerticalButton extends View {
             case MotionEvent.ACTION_DOWN:
             case MotionEvent.ACTION_MOVE:
                 mOffsetY = (int) (event.getY() - mRockerHeigh / 2 + 0.5f);
+                Log.i("TAG", "mOffsetY: " + mOffsetY + "---event.getY()" + event.getY());
                 break;
             case MotionEvent.ACTION_UP:
                 mOffsetY = 0;
@@ -129,14 +128,13 @@ public class RockerVerticalButton extends View {
     }
 
     public int getmOffsetY() {
-        int result = CENTREVALUE;
+        int result;
         float portion = ((float) MAXVALUE) / mRockerHeigh;
-        if (mOffsetY < 0) {
-            result = (int) (-mOffsetY * portion + CENTREVALUE);
-            if (result > MAXVALUE) result = MAXVALUE;
-        } else if (mOffsetY > 0) {
-            result = (int) ((((float) mRockerHeigh) / 2 - mOffsetY) * portion);
-            if (result < 0) result = 0;
+        result = (int) (CENTREVALUE - mOffsetY * portion);
+        if (mOffsetY < 0 && result > MAXVALUE) {
+            result = MAXVALUE;
+        } else if (mOffsetY > 0 && result < 0) {
+            result = 0;
         }
         return result;
     }

@@ -5,4 +5,9 @@
         <attr name="myTrackV" format="reference"/>
     </declare-styleable>
 
+    <declare-styleable name="TrimHorizontalButton">
+        <attr name="thumbTrimH" format="reference" />
+        <attr name="trackTrimH" format="reference" />
+    </declare-styleable>
+
 </resources>
